@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Movie = require('../models/movies.model');
+let Movie = require('../../models/movie-admin-models/movies.model');
 
 router.route('/').get((req, res) => {
     Movie.find()

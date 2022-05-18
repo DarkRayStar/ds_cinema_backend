@@ -10,6 +10,8 @@ const movieSchema = new Schema({
     imageurl: { type: String, required: true },
     genre: { type: String, required: true },
     imdb: { type: String, required: true },
+    showtime: { type: String, required: true },
+    cast: { type: String, required: true },
 }, {
     timestamps: true,
 });

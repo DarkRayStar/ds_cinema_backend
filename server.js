@@ -23,8 +23,10 @@ connection.once('open', () => {
 })
 
 const movieRouter = require('./routes/movie-admin-routes/movies');
+const cartRouter = require('./routes/customer-routes/cart');
 
 app.use('/movies', movieRouter);
+app.use('/cart', cartRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

@@ -10,12 +10,20 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const movieName = req.body.movieName;
     const producer = req.body.producer;
-    const year = Number(req.body.year);
+    const year = req.body.year;
+    const Description = req.body.Description;
+    const imageurl = req.body.imageurl;
+    const genre = req.body.genre;
+    const imdb = req.body.imdb;
 
     const newMovie = new Movie({
         movieName,
         producer,
         year,
+        Description,
+        imageurl,
+        genre,
+        imdb,
     });
 
     newMovie.save()
@@ -40,7 +48,11 @@ router.route('/update/:id').post((req, res) => {
         .then(movie => {
             movie.movieName = req.body.movieName;
             movie.producer = req.body.producer;
-            movie.year = Number(req.body.year);
+            movie.year = req.body.year;
+            movie.Description = req.body.Description;
+            movie.imageurl = req.body.imageurl;
+            movie.genre = req.body.genre;
+            movie.imdb = req.body.imdb;
 
             movie.save()
                 .then(() => res.json('Movie updated!'))

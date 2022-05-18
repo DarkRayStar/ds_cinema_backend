@@ -22,7 +22,7 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
-const movieRouter = require('./routes/movies');
+const movieRouter = require('./routes/movie-admin-routes/movies');
 
 app.use('/movies', movieRouter);
 

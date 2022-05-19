@@ -78,7 +78,9 @@ const cartRouter = require('./routes/customer-routes/cart');
 const cusRegistration = require('./routes/userMangemnt-routes/customerRegistration');
 const cuslogin = require('./routes/userMangemnt-routes/customerLogin');
 const adminRegistration = require('./routes/userMangemnt-routes/adminRegistration');
-const adminlogin = require('./routes/userMangemnt-routes/adminLogin');      
+const adminlogin = require('./routes/userMangemnt-routes/adminLogin');   
+
+// const cusRegistration = require('./routes/userMangemnt-routes/customerRegistration');
 
 const req = require('express/lib/request');
 

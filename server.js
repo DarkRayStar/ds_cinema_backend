@@ -52,7 +52,7 @@ app.post("/create-checkout-session", async (req, res) => {
                     quantity: item.quantity,
                 }
             }),
-            success_url: `${process.env.SERVER_URL}/success.html`,
+            success_url: `${process.env.CLIENT_URL}/payment-success`,
             cancel_url: `${process.env.CLIENT_URL}/cart/view#`,
         })
         res.json({ url: session.url })

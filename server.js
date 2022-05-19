@@ -75,10 +75,20 @@ const movieRouter = require('./routes/movie-admin-routes/movies');
 
 const cartRouter = require('./routes/customer-routes/cart');
 
+const cusRegistration = require('./routes/userMangemnt-routes/customerRegistration');
+const cuslogin = require('./routes/userMangemnt-routes/customerLogin');
+const adminRegistration = require('./routes/userMangemnt-routes/adminRegistration');
+const adminlogin = require('./routes/userMangemnt-routes/adminLogin');      
+
 const req = require('express/lib/request');
 
 app.use('/movies', movieRouter);
 app.use('/cart', cartRouter);
+
+app.use("/customer/registration", cusRegistration);
+app.use("/customer/login", cuslogin);
+app.use("/admin/registration", adminRegistration);
+app.use("/admin/login", adminlogin);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

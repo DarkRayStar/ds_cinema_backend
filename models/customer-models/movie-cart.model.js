@@ -10,6 +10,7 @@ const movieCartSchema = new Schema({
     genre: { type: String, required: true },
     imdb: { type: String, required: true },
     theaterOpt: { type: String },
+    quantity: { type: String },
 }, {
     timestamps: true,
 });

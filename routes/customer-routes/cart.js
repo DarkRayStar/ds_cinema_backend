@@ -45,6 +45,12 @@ router.route('/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/').delete((req, res) => {
+    Cart.deleteMany()
+        .then(items => res.json(items))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/update/:id').post((req, res) => {
     Cart.findById(req.params.id)
         .then(item => {

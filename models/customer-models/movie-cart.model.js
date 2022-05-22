@@ -1,3 +1,4 @@
+const { boolean } = require('joi');
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -11,6 +12,10 @@ const movieCartSchema = new Schema({
     imdb: { type: String, required: true },
     theaterOpt: { type: String },
     quantity: { type: String },
+    userId: { type: String },
+    showOnCart: { type: Boolean },
+    paidStatus: { type: Boolean },
+
 }, {
     timestamps: true,
 });

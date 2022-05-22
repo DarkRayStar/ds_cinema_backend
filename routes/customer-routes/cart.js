@@ -16,6 +16,9 @@ router.route('/add').post((req, res) => {
     const imdb = req.body.imdb;
     const theaterOpt = req.body.theaterOpt;
     const quantity = req.body.quantity;
+    const userId = req.body.userId;
+    const showOnCart = req.body.showOnCart;
+    const paidStatus = req.body.paidStatus;
 
     const newCart = new Cart({
         movieName,
@@ -25,7 +28,10 @@ router.route('/add').post((req, res) => {
         genre,
         imdb,
         theaterOpt,
-        quantity
+        quantity,
+        userId,
+        showOnCart,
+        paidStatus,
     });
 
     newCart.save()
@@ -62,6 +68,9 @@ router.route('/update/:id').post((req, res) => {
             item.imdb = req.body.imdb;
             item.theaterOpt = req.body.theaterOpt;
             item.quantity = req.body.quantity;
+            item.userId = req.body.userId;
+            item.showOnCart = req.body.showOnCart;
+            item.paidStatus = req.body.paidStatus;
 
             item.save()
                 .then(() => res.json('Movie updated!'))

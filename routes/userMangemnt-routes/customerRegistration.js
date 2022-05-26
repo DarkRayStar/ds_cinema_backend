@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
 		const { error } = validate(req.body);
 		if (error){
 			// return res.status(400).send({ message: error.details[0].message });
-			return res.json('invalid password! (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)').status(400);
+			return res.json('invalid password! (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)');
 		}
 			
 

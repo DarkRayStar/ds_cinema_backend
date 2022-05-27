@@ -31,7 +31,9 @@ const storeItems = new Map([
     ["Godzilla - 4K CINEMA", { priceInCents: 75000, name: "Godzilla - 4K CINEMA" }],
     ["Godzilla - DOLBY THEATER", { priceInCents: 50000, name: "Godzilla - DOLBY THEATER" }],
     ["JOKER - 4K CINEMA", { priceInCents: 75000, name: "JOKER - 4K CINEMA" }],
-    ["JOKER - DOLBY THEATER", { priceInCents: 50000, name: "JOKER - DOLBY THEATER" }]
+    ["JOKER - DOLBY THEATER", { priceInCents: 50000, name: "JOKER - DOLBY THEATER" }],
+    ["SUPERMAN - 4K CINEMA", { priceInCents: 75000, name: "SUPERMAN- 4K CINEMA" }],
+    ["SUPERMAN - DOLBY THEATER", { priceInCents: 50000, name: "SUPERMAN - DOLBY THEATER" }]
 ])
 
 app.post("/create-checkout-session", async (req, res) => {

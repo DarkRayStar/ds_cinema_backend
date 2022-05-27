@@ -8,23 +8,22 @@ router.post("/", async (req, res) => {
 		const { error } = validate(req.body);
 		if (error){
 			return res.status(400).send({ message: error.details[0].message });
-			// return res.json('invalid password! (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)');
+			
 		}
 			
 
 		const user = await User.findOne({ email: req.body.email });
 		if (!user){
-			// return res.status(401).send({ message: "Invalid Email or Password" });
-			return res.json('Invalid Email or Password!').status(401);
+			return res.json('Login Failed. Please re-check your credentials.').status(401);
 		}
-			
+		
+		//compare Password related to this email
 		const validPassword = await bcrypt.compare(
 			req.body.password,
 			user.password
 		);
 		if (!validPassword){
-			// return res.status(401).send({ message: "Invalid Email or Password" });
-			return res.json("Invalid Email or Password").status(401);
+			return res.json("Login Failed. Please re-check your credentials.").status(401);
 		}
 
 		if (validPassword && user) {
@@ -36,9 +35,6 @@ router.post("/", async (req, res) => {
 			  status:200
 			});
 		  }
-
-		// const token = user.generateAuthToken();
-		// res.status(200).send({ data: token, message: "logged in successfully" });
 
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
